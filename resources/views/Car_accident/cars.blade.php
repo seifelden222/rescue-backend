@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إدارة سياراتي | منصة إنقاذ</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --primary: #E31E24;
+            --navy: #0F172A;
+            --light-bg: #F8FAFC;
+        }
+        body {
+            font-family: "Cairo", sans-serif;
+            background-color: white;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+        }
+        .sidebar-item-active {
+            background-color: #f1f5f9;
+            color: var(--navy);
+            border-left: 4px solid var(--primary);
+        }
+        .car-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .car-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex">
+<aside class="w-72 bg-white h-screen sticky top-0 border-l border-slate-100 flex flex-col shrink-0">
+<div class="p-8 flex flex-col items-center border-b border-slate-50">
+
+<img alt="محمد الأحمد" class="w-full h-full object-cover " src="assets/img/logo.png" style="width: 100px;"/>
+
+<h3 class="font-bold text-lg text-[var(--navy)]">محمد الأحمد</h3>
+<p class="text-sm text-slate-400">مستخدم</p>
+</div>
+<nav class="flex-grow py-6">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="home.html">
+<span class="material-symbols-outlined">dashboard</span>
+                        الرئيسية
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="help.html">
+<span class="material-symbols-outlined">sos</span>
+                        طلب مساعدة
+                    </a>
+</li>
+<li>
+<a class="sidebar-item-active flex items-center gap-3 px-8 py-4 font-bold transition-all" href="cars.html">
+<span class="material-symbols-outlined">directions_car</span>
+                        سيارتي
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="record.html">
+<span class="material-symbols-outlined">history</span>
+                        السجل
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="notifications.html">
+<span class="material-symbols-outlined">notifications</span>
+                        الإشعارات
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="settings.html">
+<span class="material-symbols-outlined">settings</span>
+                        الإعدادات
+                    </a>
+</li>
+</ul>
+</nav>
+<div class="p-8">
+<button class="flex items-center gap-3 text-red-500 font-bold hover:bg-red-50 w-full p-3 rounded-xl transition-all">
+<span class="material-symbols-outlined">logout</span>
+                تسجيل الخروج
+            </button>
+</div>
+</aside>
+<main class="flex-grow p-10 bg-white min-h-screen">
+<div class="flex justify-between items-start mb-10">
+<div>
+<h1 class="text-3xl font-black text-[var(--navy)] mb-2">سياراتي</h1>
+<p class="text-slate-500 font-bold">إدارة سياراتك المضافة للحصول على مساعدة أسرع</p>
+</div>
+<button class="bg-[var(--primary)] text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-red-100 hover:bg-red-700 transition-all">
+<span class="material-symbols-outlined">add</span>
+                إضافة سيارة جديدة
+            </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="car-card bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm flex flex-col">
+<div class="h-48 overflow-hidden relative">
+<img alt="Toyota Camry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA32rthUE2VFpwfQuyRxgBDqGNx4TO6T-l1NggyXzS3z06iAyPyAeiJBcCDHubdfzR1dE-_c81L4lYmc2PK7t0sKSFzY2BMfIsbhBD558cpk0kmp7UWrG-bgYzgruyNDmhIVFanRcY_uRvVxVftlrL5vZSvMIZwbPV3Th-U7pZ2Q-KqNXBz3tNsWpT3gpBRk_1dFhYCh3PtIEFUQ4h5cVBVtF_HF44fPOSX29PD3Vbf4f1wwd8m11qoMyHt6h51VUoOiTdkcbSiB0uJ"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<button class="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm text-slate-600 flex items-center justify-center hover:text-[var(--primary)] transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm text-red-500 flex items-center justify-center hover:bg-red-50 transition-colors">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-xl font-black text-[var(--navy)]">تويوتا هيلوكس</h3>
+<span class="bg-slate-50 text-slate-500 text-xs px-3 py-1 rounded-full font-bold">افتراضية</span>
+</div>
+<div class="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
+<div class="flex-1 flex flex-col items-center border-l border-slate-200">
+<span class="text-[10px] text-slate-400 font-bold uppercase">أرقام</span>
+<span class="text-lg font-black tracking-widest text-[var(--navy)]">1234</span>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<span class="text-[10px] text-slate-400 font-bold uppercase">حروف</span>
+<span class="text-lg font-black tracking-widest text-[var(--navy)]">أ ب ج</span>
+</div>
+</div>
+</div>
+</div>
+<div class="car-card bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm flex flex-col">
+<div class="h-48 overflow-hidden relative">
+<img alt="Toyota Camry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA32rthUE2VFpwfQuyRxgBDqGNx4TO6T-l1NggyXzS3z06iAyPyAeiJBcCDHubdfzR1dE-_c81L4lYmc2PK7t0sKSFzY2BMfIsbhBD558cpk0kmp7UWrG-bgYzgruyNDmhIVFanRcY_uRvVxVftlrL5vZSvMIZwbPV3Th-U7pZ2Q-KqNXBz3tNsWpT3gpBRk_1dFhYCh3PtIEFUQ4h5cVBVtF_HF44fPOSX29PD3Vbf4f1wwd8m11qoMyHt6h51VUoOiTdkcbSiB0uJ"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<button class="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm text-slate-600 flex items-center justify-center hover:text-[var(--primary)] transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm text-red-500 flex items-center justify-center hover:bg-red-50 transition-colors">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-xl font-black text-[var(--navy)]">هيونداي إلنترا</h3>
+</div>
+<div class="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
+<div class="flex-1 flex flex-col items-center border-l border-slate-200">
+<span class="text-[10px] text-slate-400 font-bold uppercase">أرقام</span>
+<span class="text-lg font-black tracking-widest text-[var(--navy)]">5678</span>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<span class="text-[10px] text-slate-400 font-bold uppercase">حروف</span>
+<span class="text-lg font-black tracking-widest text-[var(--navy)]">د هـ و</span>
+</div>
+</div>
+</div>
+</div>
+<button class="border-2 border-dashed border-slate-200 rounded-3xl p-6 flex flex-col items-center justify-center text-slate-400 hover:border-[var(--primary)] hover:text-[var(--primary)] hover:bg-red-50/30 transition-all group">
+<div class="w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center mb-4 group-hover:bg-red-100/50 transition-colors">
+<span class="material-symbols-outlined text-3xl">add_circle</span>
+</div>
+<span class="font-bold">إضافة سيارة أخرى</span>
+</button>
+</div>
+<a class="fixed bottom-8 left-8 bg-[var(--navy)] text-white p-4 rounded-full shadow-2xl flex items-center gap-3 hover:bg-slate-800 transition-all z-50 group" href="tel:19000">
+<span class="material-symbols-outlined text-3xl text-[var(--primary)] group-hover:scale-110 transition-transform">support_agent</span>
+<div class="flex flex-col items-start leading-none pr-2">
+<span class="text-[10px] font-bold opacity-70">الدعم الفني</span>
+<span class="text-lg font-black tracking-widest" dir="ltr">19000</span>
+</div>
+</a>
+</main>
+
+</body></html>
