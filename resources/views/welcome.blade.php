@@ -35,7 +35,7 @@
     <aside class="w-72 bg-white h-screen sticky top-0 border-l border-slate-100 flex flex-col shrink-0">
         <div class="p-8 flex flex-col items-center border-b border-slate-50">
 
-            <img alt="محمد الأحمد" class="w-full h-full object-cover " src="assets/img/logo.png" style="width: 100px;" />
+            <img alt="محمد الأحمد" class="w-full h-full object-cover " src="{{ asset('img/logo.png') }}" style="width: 100px;" />
 
             <h3 class="font-bold text-lg text-[var(--navy)]">محمد الأحمد</h3>
             <p class="text-sm text-slate-400">مستخدم</p>
@@ -43,37 +43,37 @@
         <nav class="flex-grow py-6">
             <ul class="space-y-1">
                 <li>
-                    <a class="sidebar-item-active flex items-center gap-3 px-8 py-4 font-bold transition-all" href="home.html">
+                    <a class="sidebar-item-active flex items-center gap-3 px-8 py-4 font-bold transition-all" href="{{ route('car-accident.index') }}">
                         <span class="material-symbols-outlined">dashboard</span>
                         الرئيسية
                     </a>
                 </li>
                 <li>
-                    <a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="help.html">
+                    <a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="{{ route('help') }}">
                         <span class="material-symbols-outlined">sos</span>
                         طلب مساعدة
                     </a>
                 </li>
                 <li>
-                    <a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="cars.html">
+                    <a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="{{ route('cars') }}">
                         <span class="material-symbols-outlined">directions_car</span>
                         سيارتي
                     </a>
                 </li>
                 <li>
-                    <a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="record.html">
+                    <a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="{{ route('record') }}">
                         <span class="material-symbols-outlined">history</span>
                         السجل
                     </a>
                 </li>
                 <li>
-                    <a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="notifications.html">
+                    <a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="{{ route('notifications') }}">
                         <span class="material-symbols-outlined">notifications</span>
                         الإشعارات
                     </a>
                 </li>
                 <li>
-                    <a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="settings.html">
+                    <a class="flex items-center gap-3 px-8 py-4 text-slate-500 hover:text-[var(--navy)] hover:bg-slate-50 font-bold transition-all" href="{{ route('settings') }}">
                         <span class="material-symbols-outlined">settings</span>
                         الإعدادات
                     </a>
@@ -96,9 +96,9 @@
             <div class="flex items-center justify-between mb-4">
                 <h2 class="text-xl font-bold text-[var(--navy)]">إجراءات سريعة</h2>
             </div>
-            <button class="bg-[var(--primary)] hover:bg-red-700 text-white px-8 py-5 rounded-2xl font-black text-xl shadow-xl shadow-red-500/20 transition-all flex items-center gap-3 active:scale-[0.98]">
+                <button class="bg-[var(--primary)] hover:bg-red-700 text-white px-8 py-5 rounded-2xl font-black text-xl shadow-xl shadow-red-500/20 transition-all flex items-center gap-3 active:scale-[0.98]">
                 <span class="material-symbols-outlined">emergency</span>
-                <a href="help.html"> طلب مساعدة الآن</a>
+                <a href="{{ route('help') }}"> طلب مساعدة الآن</a>
             </button>
         </section>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">

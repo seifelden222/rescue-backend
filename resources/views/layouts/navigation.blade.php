@@ -19,6 +19,7 @@
             </div>
 
             <!-- Settings Dropdown -->
+            @auth
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -51,6 +52,14 @@
                     </x-slot>
                 </x-dropdown>
             </div>
+            @endauth
+
+            @guest
+            <div class="hidden sm:flex sm:items-center sm:ms-6 gap-4">
+                <a href="{{ route('login') }}" class="text-sm font-medium text-gray-600 hover:text-gray-900">تسجيل الدخول</a>
+                <a href="{{ route('register') }}" class="px-3 py-2 bg-[var(--primary)] text-white rounded-md font-medium">إنشاء حساب</a>
+            </div>
+            @endguest
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
@@ -73,6 +82,7 @@
         </div>
 
         <!-- Responsive Settings Options -->
+        @auth
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">
                 <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
@@ -96,5 +106,15 @@
                 </form>
             </div>
         </div>
+        @endauth
+
+        @guest
+        <div class="pt-4 pb-1 border-t border-gray-200">
+            <div class="px-4 flex flex-col gap-2">
+                <a href="{{ route('login') }}" class="font-medium text-base text-gray-800">تسجيل الدخول</a>
+                <a href="{{ route('register') }}" class="font-medium text-sm text-gray-500">إنشاء حساب</a>
+            </div>
+        </div>
+        @endguest
     </div>
 </nav>
