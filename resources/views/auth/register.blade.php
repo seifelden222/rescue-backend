@@ -78,7 +78,19 @@
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
 
-                    <!-- البريد الإلكتروني (أو الهاتف) -->
+                    <!-- رقم الهاتف -->
+                    <div>
+                        <label class="block text-sm font-extrabold text-[var(--navy)] mb-2" for="phone">رقم الهاتف</label>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">call</span>
+                            <input id="phone" name="phone" type="text" value="{{ old('phone') }}" required autocomplete="tel"
+                                   class="w-full pr-12 pl-4 py-4 rounded-2xl border-2 border-slate-100 focus:border-[var(--navy)] focus:ring-0 transition-all placeholder:text-slate-300 font-bold @error('phone') border-red-500 @enderror"
+                                   placeholder="01012345678"/>
+                        </div>
+                        <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+                    </div>
+
+                    <!-- البريد الإلكتروني -->
                     <div>
                         <label class="block text-sm font-extrabold text-[var(--navy)] mb-2" for="email">البريد الإلكتروني</label>
                         <div class="relative">

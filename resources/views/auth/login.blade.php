@@ -57,18 +57,18 @@
                 <form method="POST" action="{{ route('login') }}" class="space-y-6">
                     @csrf
 
-                    <!-- البريد الإلكتروني (أو الهاتف حسب إعداداتك في Laravel) -->
+                    <!-- البريد الإلكتروني أو رقم الهاتف -->
                     <div class="space-y-2">
-                        <x-input-label for="email" class="block text-sm font-bold text-slate-700" :value="__('البريد الإلكتروني')" />
+                        <x-input-label for="login" class="block text-sm font-bold text-slate-700" :value="__('البريد الإلكتروني أو رقم الهاتف')" />
                         <div class="relative group">
-                            <input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username"
-                                   class="w-full h-14 pr-12 pl-4 bg-white border border-slate-200 rounded-xl shadow-sm focus:ring-2 focus:ring-red-500/10 focus:border-[#E31E24] transition-all outline-none text-right font-bold @error('email') border-red-500 @enderror" 
-                                   placeholder="example@mail.com"/>
+                            <input id="login" type="text" name="login" value="{{ old('login') }}" required autofocus autocomplete="username"
+                                   class="w-full h-14 pr-12 pl-4 bg-white border border-slate-200 rounded-xl shadow-sm focus:ring-2 focus:ring-red-500/10 focus:border-[#E31E24] transition-all outline-none text-right font-bold @error('login') border-red-500 @enderror" 
+                                   placeholder="example@mail.com أو 01012345678"/>
                             <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-[#E31E24] transition-colors">
-                                <span class="material-symbols-outlined">mail</span>
+                                <span class="material-symbols-outlined">alternate_email</span>
                             </div>
                         </div>
-                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('login')" class="mt-2" />
                     </div>
 
                     <!-- كلمة المرور -->
